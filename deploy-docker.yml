@@ -19,6 +19,16 @@
       pip:
         name: docker-py
         state: present
+    - name: remove container
+      docker_container:
+        name: prodevans
+        state: absent
+    - name: Remove image
+      docker_image:
+        state: absent
+        name: raghav8125/prodevans:0.0.1
+         
+      
     - name: Start the container
       docker_container:
         name: prodevans
